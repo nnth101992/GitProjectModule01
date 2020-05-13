@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SwitchCase</title>
+</head>
+<body>
+<script>
+    let value = parseInt(prompt('Type a number'));
+    let p = value > 0;
+    switch (p) {
+        case (true):
+            alert(1);
+        case (false):
+            switch (value) {
+                case 0:
+                    alert(0);
+                    break;
+                default:
+                    alert(-1);
+            }
+    }
+</script>
+</body>
+</html>

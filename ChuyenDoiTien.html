@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi tien te</title>
+    <style type="text/css">
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+            text-align: center;
+        }
+
+        .col-35 {
+            float: left;
+            width: 35%;
+            margin-top: 6px;
+            text-align: center;
+        }
+
+        .col-15 {
+            float: left;
+            width: 15%;
+            margin-top: 6px;
+            text-align: center;
+            border-color: blue;
+            color: white;
+        }
+
+        input[type=text], textarea, select {
+            width: 90%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            resize: vertical;
+            border-radius: 4px;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            margin-right: 6%;
+            margin-top: 10px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        .row:after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+
+        label {
+            padding: 12px 12px 12px 12px;
+            display: inline;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <form method="get" action="ChuyenDoiTien.html">
+        <div class="row">
+            <div class="col-35">
+                <label><b>Mount</b></label>
+            </div>
+            <div class="col-25">
+                <label><b>From Currency</b></label>
+            </div>
+            <div class="col-25">
+                <label><b>To Currency</b></label>
+            </div>
+            <div class="col-15">
+                <label></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-35">
+                <input type="text" id="value01" name="value" placeholder="Input value">
+            </div>
+            <div class="col-25">
+                <select id="From" name="From">
+                    <option value=1>Vietnam</option>
+                    <option value=23000>USD</option>
+                </select>
+            </div>
+            <div class="col-25">
+                <select id="To" name="To">
+                    <option value=23000>USD</option>
+                    <option value=1>Vietnam</option>
+                </select>
+            </div>
+            <div class="col-15">
+                <button type="button" onclick="abc()">Convert</button>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<div id="123"></div>
+<script>
+    function abc() {
+        let a = document.getElementById('From').value;
+        let b = document.getElementById('To').value;
+        let c = parseInt(document.getElementById('value01').value);
+        let d = c*a/b;
+        document.getElementById("123").innerHTML="Result : " + d + " VND";
+    }
+</script>
+</body>
+</html>

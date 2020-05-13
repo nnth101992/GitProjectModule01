@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung may tinh</title>
+</head>
+<body>
+<form action="#" method="get">
+    <h3>Calculator</h3>
+    <input type="text" id="FirstValue" name="FirstValue" placeholder="12">
+    <input type="text" id="SecondValue" name="SecondValue" placeholder="12"><br><br>
+    <button type="button" onclick="add()">Addition(+)</button>
+    <button type="button" onclick="sub()">Subtract(-)</button>
+    <button type="button" onclick="multi()">Multiplication(X)</button>
+    <button type="button" onclick="div()">Division(/)</button>
+    <p id="01"></p>
+    <p id="02"></p>
+    <p id="03"></p>
+    <p id="04"></p>
+    <script>
+        function div() {
+            let a = parseFloat(document.getElementById('FirstValue').value);
+            let b = parseFloat(document.getElementById('SecondValue').value);
+            let Division = a / b;
+            document.getElementById("01").innerHTML= "Result Division :" + Division;
+        }
+        function add() {
+            let a = parseFloat(document.getElementById('FirstValue').value);
+            let b = parseFloat(document.getElementById('SecondValue').value);
+            let Addition = a + b;
+            document.getElementById("02").innerHTML= "Result Addition :" + Addition;
+        }
+        function sub() {
+            let a = parseFloat(document.getElementById('FirstValue').value);
+            let b = parseFloat(document.getElementById('SecondValue').value);
+            let Subtract = a - b;
+            document.getElementById("03").innerHTML= "Result Subtract :" + Subtract;
+        }
+        function multi() {
+            let a = parseFloat(document.getElementById('FirstValue').value);
+            let b = parseFloat(document.getElementById('SecondValue').value);
+            let Multiplication = a * b;
+            document.getElementById("04").innerHTML= "Result Multiplication :" + Multiplication;
+        }
+    </script>
+</form>
+</body>
+</html>

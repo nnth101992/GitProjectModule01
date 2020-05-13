@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhap va tinh diem cho SV</title>
+    <script>
+        let inputVatly;
+        let inputHoahoc;
+        let inputSinhhoc;
+        inputVatly = prompt("Enter diem ly");
+        inputHoahoc = prompt("Enter diem hoa");
+        inputSinhhoc = prompt("Enter diem sinh");
+        let ly = parseInt(inputVatly);
+        let hoa = parseInt(inputHoahoc);
+        let sinh = parseInt(inputSinhhoc);
+        let tong = ly + hoa + sinh;
+        let tb = tong/3;
+        document.write("Tong diem: " + tong);
+        document.write("Diem trung binh cac mon: " + tb);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
