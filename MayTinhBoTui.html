@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tao ung dung may tinh voi cac phep tinh co ban</title>
+  <style>
+  </style>
+</head>
+<body>
+<form action="#" method="get">
+  <input type="text" id="a1" name="inputnumber" size="11px" style="text-align: right"><br><br>
+  <button type="button" onclick="number_1()" id="b1">1</button>
+  <button type="button" onclick="number_2()" id="b2">2</button>
+  <button type="button" onclick="number_3()" id="b3">3</button>
+  <button type="button" onclick="addition()" id="b4">+</button>
+  <br><br>
+  <button type="button" onclick="number_4()" id="b5">4</button>
+  <button type="button" onclick="number_5()" id="b6">5</button>
+  <button type="button" onclick="number_6()" id="b7">6</button>
+  <button type="button" onclick="subtract()" id="b8">-</button>
+  <br><br>
+  <button type="button" onclick="number_7()" id="b9">7</button>
+  <button type="button" onclick="number_8()" id="b10">8</button>
+  <button type="button" onclick="number_9()" id="b11">9</button>
+  <button type="button" onclick="multiplication()" id="b12">X</button>
+  <br><br>
+  <button type="button" onclick="reset()" id="b13">C</button>
+  <button type="button" onclick="number_0()" id="b14">0</button>
+  <button type="button" onclick="equal()" id="b15">=</button>
+  <button type="button" onclick="division()" id="b16">/</button>
+  <br>
+</form>
+<script>
+  function number_1() {
+    console.log("test");
+    document.getElementById('a1').value += '1';
+  }
+
+  function number_2() {
+    document.getElementById('a1').value += "2";
+  }
+
+  function number_3() {
+    document.getElementById('a1').value += "3";
+  }
+
+  function addition() {
+    document.getElementById('a1').value += "+";
+  }
+
+  function number_4() {
+    document.getElementById('a1').value += "4";
+  }
+
+  function number_5() {
+    document.getElementById('a1').value += "5";
+  }
+
+  function number_6() {
+    document.getElementById('a1').value += "6";
+  }
+
+  function subtract() {
+    document.getElementById('a1').value += "-";
+  }
+
+  function number_7() {
+    document.getElementById('a1').value += "7";
+  }
+
+  function number_8() {
+    document.getElementById('a1').value += "8";
+  }
+
+  function number_9() {
+    document.getElementById('a1').value += "9";
+  }
+
+  function multiplication() {
+    document.getElementById('a1').value += "*";
+  }
+
+  function reset() {
+    document.getElementById('a1').value;
+  }
+
+  function number_0() {
+    document.getElementById('a1').value += "0";
+  }
+
+  function equal() {
+    console.log("test");
+    document.getElementById('a1').value = eval(document.getElementById("a1").value);
+  }
+
+  function division() {
+    document.getElementById('a1').value += "/";
+  }
+</script>
+</body>
+</html>
