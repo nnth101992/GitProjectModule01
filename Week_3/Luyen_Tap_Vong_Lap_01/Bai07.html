@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<h4>In các số nguyên từ 1-100; Trong đó chia hết cho 3 in 'Fizz', chia hết cho 5 in 'Buzz', chia hết cả 3 lẫn 5 in 'FizzBuzz'</h4>
+</body>
+<script>
+  let a;
+  for (a = 1;a <= 100;a++) {
+    if (a % 15 == 0) {
+      document.write('FizzBuzz' + '<br>');
+    } else if (a % 3 == 0) {
+      document.write('Fizz' + '<br>');
+    } else if (a % 5 == 0) {
+      document.write('Buzz' + '<br>');
+    } else {
+      document.write(a + '<br>');
+    }
+  }
+</script>
+</html>

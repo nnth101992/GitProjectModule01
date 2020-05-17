@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 01</title>
+  <style>
+    #tong {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+<h4>Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci</h4>
+<h4 id="tong">Tong cua 20 so dau tien trong day fibonacci la: </h4>
+</body>
+<script>
+  let n = 0;
+  let a = 1;
+  let b = 0;
+  let c;
+  while (n < 20) {
+    c = a + b;
+    document.write(c + '<br>');
+    a = b;
+    b = c;
+    T = a + b + c - 1;
+    n++;
+  }
+  // alert("'Tong cua 20 so dau tien trong day fibonacci la: ' += c");
+  document.getElementById('tong').innerHTML += T;
+</script>
+</html>

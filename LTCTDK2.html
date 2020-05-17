@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cau truc dieu kien loai 2</title>
+</head>
+<body>
+<!--<h2>Bai 1</h2>-->
+<!--<script>-->
+<!--  alert('Quy doi nhiet do thang Celcius sang Fahrenheit')-->
+<!--  let c = parseFloat(prompt('Nhap gia tri nhiet do thang C'));-->
+<!--  let f = c * 1.8 + 32;-->
+<!--  alert('Gia tri F tuong ung la:' + f)-->
+<!--</script>-->
+<!--<br><br>-->
+<!--<h2>Bai 2</h2>-->
+<!--<script>-->
+<!--  let m = parseFloat(prompt('Nhap gia tri he meter: '));-->
+<!--  let ft = 3.2808 * m;-->
+<!--  alert('gia tri ft tuong ung: ' + ft);-->
+<!--</script>-->
+<!--<h2>Bai 3</h2>-->
+<!--<script>-->
+<!--  let a = parseFloat(prompt('Nhap gia tri canh hinh vuong: '));-->
+<!--  let s = a * a;-->
+<!--  alert('dien tich hinh vuong la: ' + s);-->
+<!--</script>-->
+<!--<h2>Bai 4</h2>-->
+<!--<script>-->
+<!--  let a = parseFloat(prompt('Nhap a:' ));-->
+<!--  let b = parseFloat(prompt('Nhap b:' ));-->
+<!--  let s = a * b;-->
+<!--  alert("dien tich hinh chu nhat la: " + s);-->
+<!--</script>-->
+<!--<h2>Bai 5</h2>-->
+<!--<script>-->
+<!--  let a = parseFloat(prompt('Nhap a:' ));-->
+<!--  let b = parseFloat(prompt('Nhap b:' ));-->
+<!--  let s = a * b / 2;-->
+<!--  alert("dien tich tam giac vuong la: " + s);-->
+<!--</script>-->
+<!--<h2>Bai 6</h2>-->
+<!--<script>-->
+<!--  alert('Giai phuong trinh bac 1')-->
+<!--  let a = parseFloat(prompt('Nhap tham so a'));-->
+<!--  let b = parseFloat(prompt('Nhap tham so b'));-->
+<!--  let x = -b/a;-->
+<!--  if (a == 0) {-->
+<!--    if (b == 0) {-->
+<!--      document.write('Phuong trinh vo so nghiem!');-->
+<!--    } else {-->
+<!--      document.write('Phuong trinh vo nghiem!');-->
+<!--    }-->
+<!--  } else-->
+<!--    document.write('Phuong trinh co nghiem duy nhat: ' + x);-->
+<!--</script>-->
+<!--<h2>Bai 7</h2>-->
+<!--<script>-->
+<!--  alert('Giai phuong trinh bac hai voi 3 tham so a, b, c')-->
+<!--  let a = parseInt(prompt('Nhap tham so a: '));-->
+<!--  let b = parseInt(prompt('Nhap tham so b: '));-->
+<!--  let c = parseInt(prompt('Nhap tham so c: '));-->
+<!--  let delta = (b * b) - (4 * a * c);-->
+<!--  if (delta < 0) {-->
+<!--    document.write('Phuong trinh bac hai nay vo nghiem!');-->
+<!--  } else if (delta == 0) {-->
+<!--    document.write('Phuong trinh bac hai nay co nghiem kep: ' + (-b / (2 * a)));-->
+<!--  } else {-->
+<!--    document.write("Phuong trinh bac hai nay co 2 nghiem: " + ((-b + (Math.sqrt(delta))) / (2 * a)) + " va " + ((-b - (Math.sqrt(delta))) / (2 * a)));-->
+<!--  }-->
+<!--</script>-->
+<!--<h2>Bai 8</h2>-->
+<!--<script>-->
+<!--  alert('Kiem tra xem gia tri nhap vao co phai tuoi cua mot nguoi khong?');-->
+<!--  let x = parseInt(prompt('Nhap so nguyen bat ky: '));-->
+<!--  if (x >= 0 && x <= 120) {-->
+<!--    alert('Day la tuoi cua mot nguoi!');-->
+<!--  } else {-->
+<!--    alert('Day khong phai tuoi cua mot nguoi!');-->
+<!--  }-->
+<!--<h2>Bai 9</h2>-->
+<!--<script>-->
+<!--  let a = parseFloat(prompt('Nhap a'));-->
+<!--  let b = parseFloat(prompt('Nhap b'));-->
+<!--  let c = parseFloat(prompt('Nhap c'));-->
+<!--  let x1 = a + b;-->
+<!--  let x2 = b + c;-->
+<!--  let x3 = c + a;-->
+<!--  if (a > 0 && b > 0 && c > 0 && x1 > c && x2 > a && x3 > b) {-->
+<!--    alert('a, b, c la gia tri cua 3 canh trong tam giac');-->
+<!--  } else {-->
+<!--    alert('a, b, c khong la gia tri cua 3 canh trong tam giac');-->
+<!--  }-->
+<!--</script>-->
+<h2>Bai 10</h2>
+<script>
+  let a = parseInt(prompt('Nhap tong so kWh thang nay'));
+  if (a > 100) {
+    alert('Tong hoa don tien dien thang nay la ' + ((50 * 2000) + (50 * 3000) + ((a - 100) * 4000)) + ' VND');
+  } else if (a > 50) {
+    alert('Tong hoa don tien dien thang nay la ' + ((50 * 2000) + ((a - 50) * 3000)) + ' VND');
+  } else {
+    alert('Tong hoa don tien dien thang nay la ' + (a * 2000) + ' VND');
+  }
+</script>
+<!--<h2>Bai 11</h2>-->
+<!--<script>-->
+<!--  alert('Tính thuế thu nhập cá nhân');-->
+<!--  let a = Number(prompt('Nhap muc luong cua ban'));-->
+<!--  let thue = 0;-->
+<!--  if (a < 5)-->
+<!--    alert('Ban khong can nop thue');-->
+<!--  else if (a < 10)-->
+<!--    thue = a * 5 / 100;-->
+<!--  else if (a < 18)-->
+<!--    thue = a * 10 / 100;-->
+<!--  else if (a < 32)-->
+<!--    thue = a * 15 / 100;-->
+<!--  else if (a < 52)-->
+<!--    thue = a * 20 / 100;-->
+<!--  else if (a < 80)-->
+<!--    thue = a * 25 / 100;-->
+<!--  else-->
+<!--    thue = a * 30 / 100;-->
+<!--    alert("Thue thu nhap hang thang la: " + thue + " trieu VND");-->
+<!--</script>-->
+</body>
+</html>

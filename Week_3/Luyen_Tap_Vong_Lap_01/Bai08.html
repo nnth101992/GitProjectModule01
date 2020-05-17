@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[*Bài tập] Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<h4>Game đoán số</h4>
+</body>
+<button type="submit" id="play" onclick="guest()">Play</button>
+<script>
+  function guest() {
+    let a = parseInt(prompt('Khoảng bạn muốn đoán từ: '));
+    let b = parseInt(prompt('đến: '));
+    let c = parseInt(a + Math.floor(Math.random() * (b - a)));
+    let d = parseInt(prompt('Đoán một số bất kỳ trong khoảng bạn đã chọn: '))
+    for (i = 1; i <= 3; i++) {
+      if (d === c) {
+        alert('Bạn đoán chính xác');
+      } else {
+        d = parseInt(prompt('Đoán lại nào'));
+      }
+    }
+  }
+</script>
+</html>

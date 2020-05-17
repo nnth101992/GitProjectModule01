@@ -2,9 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bai 5</title>
 </head>
 <body>
-$END$
 </body>
+<script>
+  let a = parseFloat(prompt('Nhap diem bai kiem tra: '));
+  let b = parseFloat(prompt('Nhap diem thi giua ky: '));
+  let c = parseFloat(prompt('Nhap diem thi cuoi ky: '));
+  let final = a * 0.2 + b * 0.3 + c * 0.5;
+  if (final < 0 && final > 10) {
+    document.write('Hay nhap lai cac diem!');
+  } else if (final > 8.5) {
+    document.write('Dat hoc luc Gioi');
+  } else if (final > 7) {
+    document.write('Dat hoc luc Kha');
+  } else if (final > 5.5) {
+    document.write('Dat hoc luc TB Kha');
+  } else if (final > 4) {
+    document.write('Dat hoc luc TB');
+  } else {
+    document.write('Dat hoc luc Yeu');
+  }
+</script>
 </html>

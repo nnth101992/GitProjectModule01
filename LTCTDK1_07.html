@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 7</title>
+</head>
+<body>
+<script>
+  let a = parseInt(prompt('Nhap so tien dien thang nay: '));
+  let a1 = (a * 2000);
+  let a2 = 50 * 2000 + ((a - 50) * 3000);
+  let a3 = 50 * 2000 + 50 * 3000 + ((a - 100) * 4000);
+  if (a > 100) {
+    document.write('So tien dien phai nop la: ' + a3);
+  } else if (50 <= a) {
+    document.write('So tien dien phai nop la: ' + a2);
+  } else {
+    document.write('So tien dien phai nop la: ' + a1);
+  }
+</script>
+</body>
+</html>

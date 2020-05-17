@@ -13,7 +13,7 @@
 <form action="#" method="get"><br>
   <input type="text" id="Month" name="Month" placeholder="Nhập tên tháng vào đây:">
   <input type="button" onclick="Cal()" value="Tính số ngày">
-  <h2 id="111"></h2>
+  <h3 id="111"></h3>
   <script>
     function Cal() {
       let t = parseInt(document.getElementById("Month").value);
@@ -25,19 +25,19 @@
         case 8:
         case 10:
         case 12:
-          document.getElementById("111").innerHTML= " Tháng " + t + " có 31 ngày ";
+          document.getElementById("111").innerHTML = " Tháng " + t + " có 31 ngày ";
           break;
         case 4:
         case 6:
         case 9:
         case 11:
-          document.getElementById("111").innerHTML= " Tháng " + t + " có 30 ngày ";
+          document.getElementById("111").innerHTML = " Tháng " + t + " có 30 ngày ";
           break;
         case 2:
-          document.getElementById("111").innerHTML= " Tháng " + t + " có 28 hoặc 29 ngày ";
+          document.getElementById("111").innerHTML = " Tháng " + t + " có 28 hoặc 29 ngày ";
           break;
         default:
-          document.getElementById("111").innerHTML= " None ";
+          document.getElementById("111").innerHTML = " Không tồn tại tháng mà bạn nhập! ";
           break;
       }
     }

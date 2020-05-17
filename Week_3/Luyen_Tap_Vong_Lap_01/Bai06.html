@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<h4>Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên</h4>
+</body>
+<p id="result"></p>
+<script>
+  let count;
+  let N;
+  let T;
+  for (count = 1; count <= 30; count++) {
+    N = 7 * count;
+    T = (N + 7) * count / 2;
+  }
+  document.getElementById("result").innerHTML = "Tổng của 30 số chia hết cho 7 đầu tiên trong dãy số tự nhiên là : " + T;
+</script>
+</html>

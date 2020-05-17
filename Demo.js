@@ -1,8 +1,15 @@
-let inputWidth;
-let inputHeight;
-inputWidth = prompt("Enter the width")
-inputHeight = prompt("Enter the height")
-let width = parseInt(inputWidth);
-let height = parseInt(inputHeight);
-let area = width * height;
-document.write("The area is: " + area);
+let count = 0;
+let i = 2;
+let n = 2;
+while (count <= 20) {
+  while (i <= Math.sqrt(n)) {
+    if (n % i == 0) {
+      i++;
+    } else {
+      document.write("n + '<br>");
+      n++;
+      count++;
+    }
+  }
+}
+document.getElementById('Results').innerHTML = ("20 so nguyen to dau tien la: ");
