@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tao game Puzzle</title>
+</head>
+<body>
+<img id="img1" src="a1.jpg" height="600" width="300" onclick="changeImage1();"/>
+<img id="img2" src="b2.jpg" height="600" width="300" onclick="changeImage2();"/>
+<img id="img3" src="c1.jpg" height="600" width="300" onclick="changeImage3();"/>
+<img id="img4" src="d4.jpg" height="600" width="300" onclick="changeImage4();"/>
+</body>
+<script>
+  let img1 = document.getElementById("img1");
+  let n1 = 1;
+  function changeImage1() {
+    n1++;
+    img1.src = "a"+n1+".jpg";
+    if (n1 == 4) {
+      n1 = 0;
+    }
+    if (check()){
+      document.write("Okay");
+    }
+  }
+
+  let img2 = document.getElementById("img2");
+  let n2 = 1;
+  function changeImage2() {
+    n2++;
+    img2.src = "b"+n2+".jpg";
+    if (n2 == 4) {
+      n2 = 0;
+    }
+    if (check()){
+      document.write("Okay");
+    }
+  }
+
+  let img3 = document.getElementById("img3");
+  let n3 = 1;
+  function changeImage3() {
+    n3++;
+    img3.src = "c"+n3+".jpg";
+    if (n3 == 4) {
+      n3 = 0;
+    }
+    if (check()){
+      document.write("Okay");
+    }
+  }
+
+  let img4 = document.getElementById("img4");
+  let n4 = 1;
+  function changeImage4() {
+    n4++;
+    img4.src = "d"+n4+".jpg";
+    if (n4 == 4) {
+      n4 = 0;
+    }
+    if (check()){
+      document.write("Okay");
+    }
+  }
+  function check() {
+    if (n1 == n2 && n2 == n3 && n3 == n4) {
+      return true;
+    }
+    return false;
+  }
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LT_Vonglap_02_Bai03</title>
+</head>
+<body>
+<h4>Bài 3: In tam giác vuông</h4>
+</body>
+<script>
+  let i;
+  let j;
+  for (i = 1;i <= 5; i++) {
+    for (j = 1;j <= i; j++) {
+      document.write('*');
+    }
+    document.write('<br>');
+  }
+
+
+  for (i = 5;i >= 1; i--) {
+    for (j = 1;j <= i; j++) {
+      document.write('*');
+    }
+    document.write('<br>');
+  }
+
+
+  for (i = 0;i <= 5;i++) {
+    for (j = 5;j > i;j--) {
+      document.write('&nbsp');
+    }
+    for (k = 0;k < i;k++) {
+      document.write('*');
+    }
+    document.write('<br>');
+  }
+
+  for (i = 0;i <= 5;i++) {
+    for (j = 0;j < i;j++) {
+      document.write('&nbsp');
+    }
+    for (k = 5;k > i;k--) {
+      document.write('*');
+    }
+    document.write('<br>');
+  }
+</script>
+</html>
+

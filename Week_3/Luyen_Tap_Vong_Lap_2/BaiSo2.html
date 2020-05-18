@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LT_Vonglap_02_Bai02</title>
+</head>
+<body>
+<h4>Bài 2: Tính giai thừa của một số nguyên dương</h4>
+</body>
+<script>
+  let numbers = parseInt(prompt('Nhập số nguyên dương mà bạn muốn tính giai thừa: '));
+  let gt = 1;
+  let a = 1;
+  while (a <= numbers) {
+    gt *=a;
+    a++;
+  }
+  document.write('Giai thừa của ' + numbers + ' là: ' +gt);
+</script>
+</html>
