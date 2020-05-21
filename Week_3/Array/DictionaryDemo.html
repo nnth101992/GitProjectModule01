@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dictionary</title>
+</head>
+<body>
+<input type="text" id="input" name="english" placeholder="Type a word">
+<button type="button" name ="Translate" onclick="trans()">Translate</button>
+<button type="reset">Reset</button>
+<script>
+  function trans() {
+    let lookup = false;
+    let v = ["chó", "mèo", "gà", "lập trình viên", "nhân tạo", "lương"];
+    let e = ["dog", "cat", "chicken", "programmer", "artificial", "salary"];
+    for (let i = 0; i < e.length; i++) {
+      let input = document.getElementById("input").value;
+      if (input === e[i]) {
+        lookup = true;
+        let output;
+        output = v[i];
+        alert('Từ ' + input + ' trong tiếng Việt có nghĩa là ' +output);
+        break;
+      }
+    }
+    if (lookup == false) {
+      alert('Chưa cập nhật từ này!');
+    }
+  }
+  // var matrix = new Array(10, 10);
+  // for (var row = 0; row < 5; row++) {
+  //   for (var column = 0; column < 5; column++) {
+  //     matrix[row][column] = Math.floor((Math.random() * 100) + 1);
+  //   }
+  // }
+  // console.log(matrix);
+</script>
+</body>
+
+</html>

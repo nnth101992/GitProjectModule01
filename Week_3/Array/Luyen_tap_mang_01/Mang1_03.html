@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01</title>
+</head>
+<body>
+<script>
+  let array01 = [1, 4, 9, 5, 44, 21, 16, 14, 39, 10];
+  document.write('Các phần tử trong mảng là: ' + array01 + '<br>');
+  let max = array01[0];
+  let sum = array01[0];
+  let i;
+  for (i = 1; i < array01.length;i++) {
+    sum += array01[i];
+    if (max < array01[i]) {
+      max = array01[i];
+    }
+  }
+  document.write('Phần tử có giá trị lớn nhất trong mảng là: ' + max );
+  document.write('Giá trị trung bình của các phần tử trong mảng là: ' +(sum/array01.length));
+</script>
+</body>
+</html>

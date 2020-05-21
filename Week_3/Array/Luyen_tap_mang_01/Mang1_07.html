@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra & xóa V</title>
+</head>
+<body>
+</body>
+<script>
+// let a =7;
+// let b =--a;
+// let c =b--;
+// let d =c++;
+// console.log(a);
+// console.log(b);
+// console.log(c);
+// console.log(d);
+let array01 = [1, 4, 9, 5, 44, 21, 16, 14, 39, 10];
+let V = parseInt(prompt('Nhập vào đây số nguyên bất kỳ'));
+let i;
+let index = 0;
+document.write('Các phần tử trong mảng là: ' + array01 + '<br>');
+for (i = 0; i < array01.length; i++) {
+  if (array01[i] == V) {
+    array01.splice(i, 1);
+  }
+}
+document.write('Mảng khi đã xóa phần tử giống V là: ' +array01);
+</script>
+</html>

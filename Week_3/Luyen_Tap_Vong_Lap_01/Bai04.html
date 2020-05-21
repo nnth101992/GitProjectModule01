@@ -8,19 +8,16 @@
 <h4>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5</h4>
 </body>
 <script>
-  let n = 0;
   let a = 1;
   let b = 0;
   let c;
-  while (n < 100) {
+  while (1) {
     c = a + b;
-    document.write(c + '<br>');
     a = b;
     b = c;
-    if (c % 5 ===0) {
-      alert('Số đầu tiên trong dãy fibonacci chia hết cho 5 là: ' +c);
+    if (c % 5 == 0) {
+      console.log(c);
     }
-    n++;
   }
 </script>
 </html>

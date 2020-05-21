@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược các phần tử trong mảng</title>
+</head>
+<body>
+</body>
+<script>
+  let array01 = [1, 4, 9, 5, 44, 21, 16, 14, 39, 10];
+  document.write('Các phần tử trong mảng là: ' + array01 + '<br>');
+  let first = 0;
+  let last = array01.length - 1;
+  for (; first < last; first++, last--) {
+    let b = array01[first];
+    array01[first] = array01[last];
+    array01[last] = b;
+  }
+  document.write('Các phần tử của mảng khi bị đảo ngược là: ' +array01);
+</script>
+</html>

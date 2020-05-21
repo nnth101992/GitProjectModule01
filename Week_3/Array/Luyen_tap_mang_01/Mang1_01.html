@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01</title>
+</head>
+<body>
+<h5>Bài 1</h5>
+<p id="print"></p>
+</body>
+<script>
+  let count = 0;
+  let array01 = [1, 4, 9, 5, 44, 21, 16, 14, 39, 10];
+  for (let i = 0; i < array01.length ;i++) {
+    if (array01[i] >= 10) {
+      document.write(array01[i] + '<br>');
+      count++;
+    }
+  }
+  document.getElementById('print').innerHTML = ('Trong mảng có ' + count + ' số nguyên lớn hơn hoặc bằng 10, cụ thể là:');
+</script>
+</html>
