@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm nhận hai tham số</title>
+</head>
+<body>
+<button onclick="compareParameter()">Bài 3</button>
+</body>
+<script>
+  function compareParameter(a, b) {
+    a = parseFloat(prompt("Nhập tham số thứ nhất"));
+    b = parseFloat(prompt("Nhập tham số thứ hai"));
+    let total;
+    if (a > b) {
+      alert('Số lớn nhất lớn hơn');
+    } else {
+      total = a + b;
+      alert(total);
+    }
+  }
+</script>
+</html>

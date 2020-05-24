@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[Bài tập] Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<p id="display"></p>
+</body>
+<script>
+  // let n = parseInt(prompt("Số lượng số nguyên tố đầu tiên bạn muốn in ra: "));
+  // let c = 1;
+  // let N = 2;
+  // while (c <= n) {
+  //   if (isPrime(N)) {
+  //     //console.log(N);
+  //     document.write((N + "<br>"));
+  //     c++;
+  //   }
+  //   N++;
+  // }
+  // document.getElementById("display").innerHTML = + n + " số nguyên tố đầu tiên là:";
+  let S = parseInt(prompt('Nhập số lượng số nguyên tố nhỏ hơn:'));
+  let N = 2;
+  while (N < S) {
+    if (isPrime(N)) {
+      document.write(N + "&nbsp");
+    }
+    N++;
+  }
+
+  function isPrime(x) {
+    let checked = true;
+    for (let i = 2; i <= Math.sqrt(x); i++) {
+      if (x % i === 0) {
+        checked = false;
+        break;
+      }
+    }
+    //console.log(checked);
+    return checked;
+  }
+  document.getElementById("display").innerHTML = "Các số nguyên tố nhỏ hơn " + S + " là:";
+</script>
+</html>

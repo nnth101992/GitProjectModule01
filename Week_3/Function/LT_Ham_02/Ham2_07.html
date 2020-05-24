@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Swap two numbers</title>
+</head>
+<body>
+</body>
+<script>
+  let x = parseInt(prompt("Enter first number"));
+  let y = parseInt(prompt("Enter second number"));
+  function swapNum() {
+    let virtual = x;
+    x = y;
+    y = virtual;
+    alert("Result: " + x + " và " + y);
+  }
+  swapNum();
+</script>
+</html>

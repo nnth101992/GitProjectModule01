@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng đường chéo chính của ma trận vuông</title>
+</head>
+<body>
+</body>
+<script>
+  function sumMainDiagonal() {
+    let total = 0;
+    let n = Number(prompt("Nhập vào độ dài mảng"));
+    let arrayS = new Array(n);
+    for (let i = 0; i < n; i++) {
+      arrayS[i] = new Array(n);
+      for (let j = 0; j < n; j++) {
+        arrayS[i][j] = Math.floor(Math.random() * 10);
+      }
+      document.write(arrayS[i]+"<br>");
+    }
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        if (i === j) {
+          total += arrayS[i][j];
+        }
+      }
+    }
+    return total;
+  }
+  let result = sumMainDiagonal();
+  document.write("Tổng đường chéo chính của ma trận vuông trên là: " + result);
+</script>
+</html>

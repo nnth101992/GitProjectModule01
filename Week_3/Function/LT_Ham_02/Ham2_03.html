@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm tính giai thừa</title>
+</head>
+<body>
+<!--<input id="input" type="number">-->
+<!--<button onclick="calculateFactorial()">Calculate</button>-->
+<!--<p>Factorial is: <span id="output"></span></p>-->
+</body>
+<script>
+  let a = parseInt(prompt("Nhập số nguyên dương bạn muốn tính giai thừa:"))
+  function calculateFactorial() {
+    //let a = document.getElementById("input").value;
+    let ftr = 1;
+    for (let i = 1; i <= a; i++) {
+      ftr *= i;
+    }
+    return ftr;
+    //document.getElementById("output").innerHTML = +ftr;
+  }
+  alert("Giai thừa của " + a + " là " + calculateFactorial(a));
+</script>
+</html>

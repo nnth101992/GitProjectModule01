@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hàm kiểm tra ký tự có nằm trong mảng hay không</title>
+</head>
+<body>
+<input id="array1" type="text" placeholder="Nhập chuỗi ký tự">
+<input id="character" type="text" placeholder="Nhập ký tự cần tìm">
+<button onclick="checkCharacter()">Kiểm tra</button>
+<p>Ký tự vừa nhập <span id="find"></span></p>
+</body>
+<script>
+  function checkCharacter() {
+    let input = document.getElementById("array1").value;
+    let check = document.getElementById("character").value;
+    let arr = input.split("");
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] == check) {
+        count++;
+      }
+    }
+    if (count > 0) {
+      document.getElementById("find").innerHTML = "xuất hiện " + count + " lần trong chuỗi";
+    } else {
+      alert("-1");
+    }
+  }
+</script>
+</html>

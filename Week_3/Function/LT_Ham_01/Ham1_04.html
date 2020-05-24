@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm hàm alert</title>
+</head>
+<body>
+<button onclick="addNumbers()">Bài 4</button>
+<p>Gía trị trước: <span id="before"></span></p>
+<p>Gía trị sau: <span id="after"></span></p>
+</body>
+<script>
+  function addNumbers() {
+    firstNum = 4;
+    secondNum = 8;
+    document.getElementById("before").innerHTML = result;
+    result = firstNum + secondNum;
+    return result;
+  }
+  result = 0;
+  result = addNumbers();
+  document.getElementById("after").innerHTML = result;
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hàm tìm giá trị trong mảng</title>
+</head>
+<body>
+<button onclick="findStar()">Bai 5</button>
+<p>Result: <span id="out"></span></p>
+</body>
+<script>
+  let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+  let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+  function findStar() {
+    let inStar = prompt("Nhập tên 1 chòm sao bất kỳ:")
+    let outStar;
+    for (let i = 0; i < star1.length; i++) {
+      if (inStar === star1[i]) {
+        outStar = star2[i];
+        break;
+      } else {
+        outStar = ("Not found!");
+      }
+    }
+    document.getElementById("out").innerHTML = outStar;
+  }
+</script>
+</html>

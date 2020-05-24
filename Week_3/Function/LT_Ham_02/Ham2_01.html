@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm tính bình phương của 1 số</title>
+</head>
+<body>
+<!--<div>-->
+<!--  <input id="input" type="number">-->
+<!--  <button onclick="squareNumber()">Calculate</button>-->
+<!--  <p>Square is: <span id="output"></span></p>-->
+<!--</div>-->
+</body>
+<script>
+  // function squareNumber() {
+  //   let x = document.getElementById("input").value;
+  //   let sqr = x * x;
+  //   document.getElementById("output").innerHTML = +sqr;
+  // }
+  let n = parseInt(prompt("Nhập độ dài của mảng:"));
+  let array2 = new Array(n);
+  for (let i = 0; i < n; i++) {
+    array2[i] = Math.floor(Math.random() * 100 + 1);
+    //document.getElementById("arrayIn").innerHTML = (array2[i]);
+    document.write(array2[i] + "<br>");
+  }
+</script>
+</html>

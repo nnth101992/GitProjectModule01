@@ -5,10 +5,23 @@
   <title>Dictionary</title>
 </head>
 <body>
-<input type="text" id="input" name="english" placeholder="Type a word">
+<p>The square of</p>
+<input type="text" id="input" oninput="calculate()"/>
+<p>is</p>
+<span id="result"></span>
+<input type="text" name="english" placeholder="Type a word">
 <button type="button" name ="Translate" onclick="trans()">Translate</button>
 <button type="reset">Reset</button>
 <script>
+  // function square(number) {
+  //   let result = number * number;
+  //   return result;
+  // }
+  // function calculate() {
+  //   let input = document.getElementById("input").value;
+  //   let result = square(input);
+  //   document.getElementById("result").innerHTML = result;
+  // }
   function trans() {
     let lookup = false;
     let v = ["chó", "mèo", "gà", "lập trình viên", "nhân tạo", "lương"];
@@ -27,13 +40,14 @@
       alert('Chưa cập nhật từ này!');
     }
   }
-  // var matrix = new Array(10, 10);
-  // for (var row = 0; row < 5; row++) {
-  //   for (var column = 0; column < 5; column++) {
-  //     matrix[row][column] = Math.floor((Math.random() * 100) + 1);
+  // let arr = new Array(5);
+  // for (let i = 0; i < 5; i++) {
+  //   arr[i] = new Array(5);
+  //   for (let j = 0; j < 5; j++) {
+  //     arr[i][j] = Math.floor(Math.random() * 10);
   //   }
+  //   document.write(arr[i]+"<br>");
   // }
-  // console.log(matrix);
 </script>
 </body>
 

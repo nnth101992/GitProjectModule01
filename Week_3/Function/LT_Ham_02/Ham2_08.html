@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Đảo ngược mảng trong hàm</title>
+</head>
+<body>
+<!--<p>Mảng ban đầu: <span id="arrayIn"></span></p><br>-->
+<p id="arrayOut"></p>
+</body>
+<script>
+  //let m = parseInt(prompt("Nhập vào một số bất kỳ"));
+  let n = parseInt(prompt("Nhập độ dài của mảng:"));
+  let array2 = new Array(n);
+  for (let i = 0; i < n; i++) {
+    array2[i] = Math.floor(Math.random() * 100 + 1);
+    document.write(array2[i] + "<br>");
+  }
+  //document.getElementById("arrayIn").innerHTML = array2[i] + "<br>";
+
+
+  function invertArray() {
+    let first = 0;
+    let last = array2.length - 1;
+    while (first < last) {
+      let a = array2[first];
+      array2[first] = array2[last];
+      array2[last] = a;
+      first++;
+      last--;
+    }
+    return array2;
+  }
+  document.getElementById("arrayOut").innerHTML = "Mảng khi đảo ngược vị trí các phần tử là: " +invertArray();
+</script>
+</html>

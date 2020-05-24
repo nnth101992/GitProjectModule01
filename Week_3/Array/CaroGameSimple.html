@@ -9,34 +9,43 @@
 <p id="carogame"></p>
 </body>
 <script>
-  let b = document.getElementById("carogame");
-
-  let board = [];
-  let data = "";
-  for (let i = 0; i < 5; i++) {
-    board[i] = [0, 0, 0, 0, 0];
-  }
-  for (let i = 0; i < 5; i++) {
-    data += "<br/>";
+  // let b = document.getElementById("carogame");
+  // let board = [];
+  // let data = "";
+  // for (let i = 0; i < 5; i++) {
+  //   board[i] = [0, 0, 0, 0, 0];
+  // }
+  // for (let i = 0; i < 5; i++) {
+  //   data += "<br/>";
+  //   for (let j = 0; j < 5; j++) {
+  //     data += board[i][j] + "&nbsp;&nbsp;";
+  //   }
+  // }
+  // data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+  // b.innerHTML = data;
+  // function changeValue() {
+  //   let positionX = prompt("X: ");
+  //   let positionY = prompt("Y: ");
+  //   data = "";
+  //   board[positionX][positionY] = "x";
+  //   for (let i = 0;i < 5;i++) {
+  //     data += "<br>";
+  //     for (let j = 0;j < 5;j++) {
+  //       data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+  //     }
+  //   }
+  //   data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
+  //   b.innerHTML = "<hr>" + data;
+  // }
+  let arrayB = new Array(5);
+  for (let i =0; i < 5; i++) {
+    arrayB[i] = new Array(5);
     for (let j = 0; j < 5; j++) {
-      data += board[i][j] + "&nbsp;&nbsp;";
+      // arrayB[i][j] = new Array(5, 5);
+      // for (let k =0 ; k < 5; k++) {
+        arrayB[i][j] = (Math.floor(Math.random()*100+1));
     }
-  }
-  data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-  b.innerHTML = data;
-  function changeValue() {
-    let positionX = prompt("X: ");
-    let positionY = prompt("Y: ");
-    data = "";
-    board[positionX][positionY] = "x";
-    for (let i = 0;i < 5;i++) {
-      data += "<br>";
-      for (let j = 0;j < 5;j++) {
-        data += board[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
-      }
-    }
-    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>"
-    b.innerHTML = "<hr>" + data;
+    document.write(arrayB[i] + "<br>");
   }
 </script>
 </html>

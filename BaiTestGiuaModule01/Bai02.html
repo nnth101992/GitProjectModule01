@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm tính tổng các số lẻ trong mảng</title>
+</head>
+<body>
+<span id="input"></span><br>
+<span id="result"></span>
+</body>
+<script>
+
+
+  function sumOdd(array) {
+    let sum = 0;
+    for ( let i = 0; i < array.length; i++) {
+      if (array[i] % 2 == 1) {
+        sum += array[i];
+      }
+    }
+    return sum;
+  }
+  let n = parseInt(prompt("Nhập chiều dài mảng"));
+  let arr = new Array();
+  for (let i = 0; i < n; i++) {
+    arr[i] = Math.floor(Math.random() * 10 + 1);
+    //document.write(arr[i] + "&nbsp");
+  }
+  document.getElementById("input").innerHTML = "Các phần tử trong mảng là: " + arr;
+  let a = sumOdd(arr);
+  document.getElementById("result").innerHTML = "Tổng các số lẻ trong mảng là: " + a + "<br>";
+
+</script>
+</html>
