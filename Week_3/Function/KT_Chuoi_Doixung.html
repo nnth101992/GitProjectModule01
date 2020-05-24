@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiem tra chuoi doi xung</title>
+</head>
+<body>
+</body>
+<script>
+  function isPalindrome() {
+    let isCheck = true;
+    let s = prompt("Nhập một chuỗi bất kỳ vào đây:");
+    let first = 0;
+    let last = s.length - 1;
+    while (first < last) {
+      if (s.charAt(first) !== s.charAt(last)) {
+        isCheck = false;
+        break;
+      } else {
+        first++;
+        last--;
+      }
+    }
+    return isCheck;
+  }
+
+  if (isPalindrome()) {
+    alert("Chuỗi trên đối xứng");
+  } else {
+    alert("Chuỗi trên không đối xứng");
+  }
+
+
+</script>
+</html>
