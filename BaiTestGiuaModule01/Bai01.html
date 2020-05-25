@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bai 1</title>
+  <meta charset="UTF-8">
+  <title>Bai 1</title>
 </head>
 <body>
-<form>
-<span>Enter a number:</span>
-<input id="input" type="number">
-<button onclick="showPrime()">Show</button><br>
-<span id="result"></span>
-</form>
+  <label>Enter a number:</label>
+  <input id="number" type="text" name="text">
+  <button onclick="showPrime()">Show</button>
+  <br>
+  <p id="result"></p>
 </body>
 <script>
-  function showPrime() {
-    let S = document.getElementById("input").value;
-    let N = 2;
-    while (N <= S) {
-      if (checkPrime(N)) {
-        document.write(N + "&nbsp;");
-      }
-      N++;
-    }
-    //document.getElementById("result").innerHTML = "Số các số nguyên tố từ 2 đến " + S + " là: " + checkPrime(N);
-  }
-
-
   function checkPrime(x) {
-    let checked = true;
     for (let i = 2; i <= Math.sqrt(x); i++) {
-      if (x % i === 0) {
-        checked = false;
-        break;
+      if (x % i == 0) {
+        return false;
       }
     }
     //console.log(checked);
-    return checked;
+    return true;
   }
 
+  function showPrime() {
+    let S = document.getElementById("number").value;
+    let N = 2;
+    let list = "";
+    while (N <= S) {
+      if (checkPrime(N)) {
+        list += N + "&nbsp;";
+        //document.write(N + "&nbsp;");
+      }
+      N++;
+    }
+    // for (N = 3; N <= S; N++) {
+    //   if (checkPrime(N)) {
+    //     list += "," + N;
+    //   }
+    // }
+    document.getElementById("result").innerHTML = list;
+  }
 </script>
 </html>
