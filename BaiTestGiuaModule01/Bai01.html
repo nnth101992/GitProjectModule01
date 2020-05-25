@@ -6,7 +6,7 @@
 </head>
 <body>
   <label>Enter a number:</label>
-  <input id="number" type="text" name="text">
+  <input id="input" type="text" name="text">
   <button onclick="showPrime()">Show</button>
   <br>
   <p id="result"></p>
@@ -23,22 +23,20 @@
   }
 
   function showPrime() {
-    let S = document.getElementById("number").value;
-    let N = 2;
+    let S = document.getElementById("input").value;
     let list = "";
-    while (N <= S) {
+    for (let N = 2; N <= S; N++) {
       if (checkPrime(N)) {
-        list += N + "&nbsp;";
+        list += N + "&nbsp;&nbsp;";
         //document.write(N + "&nbsp;");
       }
-      N++;
     }
     // for (N = 3; N <= S; N++) {
     //   if (checkPrime(N)) {
     //     list += "," + N;
     //   }
     // }
-    document.getElementById("result").innerHTML = list;
+    document.getElementById("result").innerHTML = "Các số nguyên tố nhỏ hơn hoặc bằng " + S + " là: " + list;
   }
 </script>
 </html>
