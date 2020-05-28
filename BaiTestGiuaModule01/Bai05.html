@@ -1,33 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Tổng đường chéo chính của ma trận vuông</title>
+  <meta charset="UTF-8">
+  <title>Tổng đường chéo chính của ma trận vuông</title>
 </head>
 <body>
 </body>
 <script>
-  function sumMainDiagonal() {
-    let total = 0;
-    let n = Number(prompt("Nhập vào độ dài mảng"));
-    let arrayS = new Array(n);
-    for (let i = 0; i < n; i++) {
-      arrayS[i] = new Array(n);
-      for (let j = 0; j < n; j++) {
-        arrayS[i][j] = Math.floor(Math.random() * 10);
-      }
-      document.write(arrayS[i]+"<br>");
+  //Đang hiển thị mảng, cần chỉnh lại để chuyển thành ma trận
+  // function sumMainDiagonal() {
+  //   let total = 0;
+  //   let n = Number(prompt("Nhập vào độ dài mảng"));
+  //   let arrayS = new Array(n);
+  //   for (let i = 0; i < n; i++) {
+  //     arrayS[i] = new Array(n);
+  //     for (let j = 0; j < n; j++) {
+  //       arrayS[i][j] = Math.floor(Math.random() * 10);
+  //     }
+  //     document.write(arrayS[i]+"<br>");
+  //   }
+  //   for (let i = 0; i < n; i++) {
+  //     for (let j = 0; j < n; j++) {
+  //       if (i === j) {
+  //         total += arrayS[i][j];
+  //       }
+  //     }
+  //   }
+  //   return total;
+  // }
+  // let result = sumMainDiagonal();
+  // document.write("Tổng đường chéo chính của ma trận vuông trên là: " + result);
+
+  let n = Number(prompt("Nhập độ dài mảng: "));
+  let matrix = new Array(n);
+  for (let i = 0; i < matrix.length; i++) {
+    matrix[i] = new Array(n);
+    for (let j = 0; j < matrix[i].length; j++) {
+      matrix[i][j] = Math.floor(Math.random() * 10);
     }
-    for (let i = 0; i < n; i++) {
-      for (let j = 0; j < n; j++) {
-        if (i === j) {
-          total += arrayS[i][j];
+    //document.write(matrix[i] + "<br>");
+  }
+
+  //Bước chuyển sang ma trận (tương tự tạo bàn cờ caro trắng)
+  let data = "";
+  for (let i = 0; i < matrix.length; i++) {
+    data += "<br>";
+    for (let j = 0; j < matrix[i].length; j++) {
+      data += matrix[i][j] + "&nbsp;&nbsp;"
+    }
+  }
+  document.write(data);
+
+  function sum(arr) {
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr[i].length; j++) {
+        if (i == j) {
+          total += arr[i][j];
         }
       }
     }
     return total;
   }
-  let result = sumMainDiagonal();
-  document.write("Tổng đường chéo chính của ma trận vuông trên là: " + result);
+  document.write("<br><br>");
+  document.write(" Tổng đường chéo chính của ma trận vuôn trên là: " +sum(matrix));
 </script>
 </html>

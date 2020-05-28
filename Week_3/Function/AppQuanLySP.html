@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[*Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm - Tham khảo a Hải</title>
+  <style>
+    .product_col {
+      text-align: left;
+      width: 60%;
+      height: 30px;
+      border: 3px red;
+    }
+
+    .product_table {
+      width: 100%;
+      border: 2px;
+      border-color: red;
+    }
+
+    .edit_button {
+      background-color: #2196F3;
+      width: 60px;
+      height: 30px;
+      color: white;
+    }
+
+    .delete_button {
+      background-color: red;
+      width: 60px;
+      height: 30px;
+      color: white;
+    }
+
+    .textbox_edit {
+      background-color: khaki;
+      width: 50%;
+      height: 23px;
+    }
+
+    .save_button {
+      background-color: aqua;
+      width: 60px;
+      height: 30px;
+    }
+    .cancel_button{
+      background-color: pink;
+      width: 60px;
+      height: 30px;
+    }
+    .header{
+      color: blue;
+      background-color: lightblue;
+    }
+    tr:nth-child(even) {
+      background-color: lightgray;
+
+    }
+  </style>
+</head>
+<body>
+<div>
+  <div>
+    <input type="text" id="txt_add" style="width: 300px;height: 23px; background-color: lightblue" placeholder="New Product">
+    <button type="button" onclick="addNewProduct();loadProducts()"
+            style="height: 30px;background-color:  lightgreen">ADD NEW PRODUCT</button>
+    <hr>
+  </div>
+  <div id="products_board">
+  </div>
+
+</div>
+
+<div class="col60"><label></label></div>
+<div class="col20"></div>
+<div class="col20"></div>
+
+<script>
+  let product_list = ['Samsung Galaxy S10','Apple iPhone 11','Oppo Reno','VinSmart Active','BPhone B86'];
+  loadProducts();
+
+  function loadProducts() {
+    let text = '<table class="product_table" id="table"><tr><td class="header"></td><td class="header"><b>Product</b></td><td class="header"></td><td class="header"></td></tr>';
+    for (let i = 0; i < product_list.length; i++) {
+      text += '<tr id="tr' + i + '"><td style="width: 30px">' + (i + 1) + '</td>' + '<td class="product_col" id="td' + i + '">' + product_list[i] + '</td>'
+        + '<td align="center" style="width: 62px"><input class="edit_button" type="button" onclick="editProduct(' + i + ')" value="EDIT"></td>'
+        + '<td align="center" style="width: 62px"><input class="delete_button" type="button" onclick="deleteProduct(' + i + ')" value="DELETE"></td>'
+        + '</tr>';
+    }
+    document.getElementById('products_board').innerHTML = text;
+
+  }
+
+  function addNewProduct() {
+    let newProduct = document.getElementById('txt_add').value;
+    if (newProduct != '') {
+      product_list.push(newProduct);
+      loadProducts()
+      document.getElementById('txt_add').value = null;
+    }
+  }
+
+  function editProduct(id) {
+    document.getElementById('td' + id).innerHTML = '<input class="textbox_edit" type="text" id="txt_edit"> <button class="save_button" type="button" onclick="saveProduct(' + id
+      + ')">SAVE</button> <button class="cancel_button" type="button" onclick="cancelEdit(' + id + ')">CANCEL</button>';
+  }
+
+  function saveProduct(id) {
+    let value = document.getElementById('txt_edit').value;
+    if (value != '') {
+      product_list[id] = value;
+      document.getElementById('td' + id).innerHTML = product_list[id];
+    }
+  }
+  function cancelEdit(id) {
+    document.getElementById('td' + id).innerHTML = product_list[id];
+  }
+
+  function deleteProduct(id) {
+    let answer = confirm('Are you sure that you want to delete product: ' + product_list[id] + '?');
+    if (answer) {
+      product_list.splice(id, 1);
+      loadProducts();
+    }
+
+  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[Bài tập] Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<!--<input type="number" id="input" placeholder="input C value" size="100px">-->
+<!--<button onclick="convertValue()">Convert</button>-->
+<label for="input"></label><input id="input" placeholder="input C value" size="100px" type="number" oninput="convertValue(this.value)" onchange="convertValue(this.value)">
+<p>To F: <span id="toF"></span></p>
+<p>To K: <span id="toK"></span></p>
+</body>
+<script>
+  let Temperature = function (celcius) {
+    this.celcius = celcius;
+    this.getFahrenheit = function () {
+      this.Fahrenheit = parseInt(this.celcius) * 1.8 + 32;
+      return this.Fahrenheit;
+    }
+
+    this.getKelvin = function () {
+      this.Kelvin = parseInt(this.celcius) + 273.15;
+      return this.Kelvin;
+    }
+  }
+
+  function convertValue(num) {
+    num = document.getElementById("input").value;
+    let temp = new Temperature(num);
+    document.getElementById("toF").innerHTML = temp.getFahrenheit();
+    document.getElementById("toK").innerHTML = temp.getKelvin();
+  }
+
+
+</script>
+</html>

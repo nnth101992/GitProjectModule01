@@ -11,12 +11,19 @@
   let count = 0;
   let n;
   for (n = 1; n <= 100; n++) {
-    if ((n % 3 === 0 || n % 7 === 0) && n % 21 !== 0) {
+    //if ((n % 3 === 0 || n % 7 === 0) && n % 21 !== 0) {
+    if (n % 3 === 0 || n % 7 === 0) {
       document.write(n + "<br>");
       count++;
     }
   }
   document.getElementById("quantity").innerHTML = "Có " + count + " số nguyên trong phạm vi từ 1 đến 100 chia hết cho 3 hoặc 7, cụ thể là:"
 
+  // let a = Number(prompt("Nhap"));
+  // for (let n = 1; n <= 100; n++) {
+  //   if ((n % 3 === 0 || n % 7 === 0)) {
+  //     alert("true")
+  //   }
+  // }
 </script>
 </html>

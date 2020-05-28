@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Adam & Eva</title>
+</head>
+<body>
+</body>
+<script>
+	let Apple = function () {
+	    this.weight = 10;
+	    this.getWeight = function () {
+	        return this.weight;
+        }
+        this.decrease = function () {
+	        if (this.weight > 0) {
+	            this.weight--;
+	            //console.log("Apple: " + this.weight);
+			}
+        }
+    }
+
+    let Human = function (name, gender, weight) {
+		this.name = name;
+		this.gender = gender;
+		this.weight = weight;
+
+		this.getName = function () {
+		    return this.name;
+        }
+        this.getGender = function () {
+            return this.gender;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+
+        this.checkApple = function (apple) {
+		    return apple.weight > 0;
+        }
+
+        this.eat = function (apple) {
+			if (this.checkApple()) {
+			    this.weight++;
+			    apple.decrease();
+			} else {
+			    document.write(this.name + " :Het roi!");
+			}
+        }
+
+        this.say = function () {
+			document.write(this.name + ":" + say + "<br>");
+        }
+    }
+
+    let apple = new Apple();
+	console.log(apple.getWeight());
+
+	let adam = new Human("Adam", "male", 70);
+	document.write(adam.getName() + "<br>");
+	document.write(adam.getGender() + "<br>");
+	document.write(adam.getWeight() + "<br>");
+
+    let eva = new Human("Eva", "female", 50);
+    document.write(eva.getName() + "<br>");
+    document.write(eva.getGender() + "<br>");
+    document.write(eva.getWeight() + "<br>");
+
+    adam.say("O, tao kia em");
+    eva.say("Cho em 1 mieng");
+    eva.eat(apple);
+    adam.eat(apple);
+    eva.eat(apple);
+    adam.eat(apple);
+    eva.say("Em no roi");
+    adam.eat(apple);
+    adam.eat(apple);
+    adam.eat(apple);
+    adam.eat(apple);
+    adam.eat(apple);
+    adam.eat(apple);
+
+</script>
+</html>
