@@ -1,32 +1,24 @@
-// let count = 0;
-// let i = 2;
-// let n = 2;
-// while (count <= 20) {
-//   while (i <= Math.sqrt(n)) {
-//     if (n % i == 0) {
-//       i++;
-//     } else {
-//       document.write("n + '<br>");
-//       n++;
-//       count++;
-//     }
-//   }
+// let canvas = document.getElementById("game");
+// let context = canvas.getContext("2d");
+//
+// let x = 20;
+// let y = 20;
+// function drawBall() {
+//       context.beginPath();
+//       context.arc(x, y, 20, 0, Math.PI * 2);
+//       context.fillStyle = "blue";
+//       context.fill();
 // }
-// document.getElementById('Results').innerHTML = ("20 so nguyen to dau tien la: ");
-// let a = 1;
-// let b = 0;
-// let c;
-// while (1) {
-//   c = a + b;
-//   a = b;
-//   b = c;
-//   if (c % 5 == 0) {
-//     console.log(c);
-//     break;
-//   }
-// }
+//
+// setInterval(function () {
+//       context.clearRect(0,0,canvas.width,canvas.height);
+//       drawBall();
+//       x += 2;
+//       y += 2;
+//
+// }, 200);
+
 let count = 0;
-while (++count <= 10) {
-  count++;
-  console.log(count);
-}
+do {
+      console.log("Looping");
+} while (count++ < 10);

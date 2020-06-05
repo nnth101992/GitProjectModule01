@@ -6,58 +6,57 @@
 </head>
 <body>
 <p id="game"></p>
-</body>
 <script>
-    function Hero(image, top, left, size, speed){
-        this.image = image;
-        this.top = top;
-        this.left = left;
-        this.size = size;
+      function Hero(image, top, left, size) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
 
-        this.getHeroElement = function(){
-            return '<img width="'+ this.size + '"' +
-                ' height="'+ this.size + '"' +
-                ' src="' + this.image +'"' +
-                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
-        }
+            this.getHeroElement = function () {
+                  return '<img width="' + this.size + '"' +
+                        ' height="' + this.size + '"' +
+                        ' src="' + this.image + '"' +
+                        ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+            }
 
-        this.moveRight = function(){
-            this.left += speed;
-        }
-        this.moveDown = function(){
-            this.top += speed;
-        }
-        this.moveLeft = function(){
-            this.left -= speed;
-        }
-        this.moveUp = function() {
-            this.top -= speed;
-        }
-    }
+            this.moveRight = function () {
+                  this.left += 25;
+            }
+            this.moveDown = function () {
+                  this.top += 25;
+            }
+            this.moveLeft = function () {
+                  this.left -= 25;
+            }
+            this.moveUp = function () {
+                  this.top -= 25;
+            }
+      }
 
-    let hero = new Hero('Ball.png', 20, 30, 200, 100);
+      let hero = new Hero('Ball.png', 0, 0, 75);
 
-    function start(){
-        let maxLeft = window.innerWidth - hero.size;
-        let maxTop = window.innerHeight - hero.size;
-        let leftPos = Math.floor(Math.random()*maxLeft);
-        let topPos = Math.floor(Math.random()*maxTop);
-
-        if(hero.left < leftPos){
-            hero.moveRight();
-        } else {
-            hero.moveLeft();
-		}
-        if(hero.top < topPos){
-            hero.moveDown();
-        } else {
-            hero.moveUp();
-        }
-
-        document.getElementById('game').innerHTML = hero.getHeroElement();
-        setTimeout(start, 50);
-    }
-
-    start();
+      function start() {
+            let maxLeft = window.innerWidth - hero.size;
+            let maxTop = window.innerHeight - hero.size;
+            //let leftPosition = Math.floor(Math.random() * maxLeft);
+            //let topPosition = Math.floor(Math.random() * maxTop);
+            if (hero.left <= maxLeft && hero.top <= 0) {
+                  hero.moveRight();
+            }
+            if (hero.left >= maxLeft) {
+                  hero.moveDown();
+            }
+            if (hero.top >= maxTop) {
+                  hero.moveLeft();
+            }
+            if (hero.left <= 0) {
+                  hero.moveUp();
+            }
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+            setTimeout(start, 50);
+      }
+      start();
 </script>
+</body>
 </html>

@@ -7,60 +7,82 @@
 <p id="caro"></p>
 <body>
 <script>
-  let b = document.getElementById("caro");
-  let board = [];
-  let data = "";
-  for (let i = 0; i < 5; i++) {
-    board[i] = new Array(".", ".", ".", ".", ".");
-    data += "<br/>";
-    for (let j = 0; j < 5; j++) {
-      data += "&ensp;" + board[i][j] + "&ensp;";
-    }
-  }
-  data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
-  b.innerHTML= data;
-  let count = 0;
-  function changeValue() {
-    let positionX = prompt("X: ");
-    let positionY = prompt("Y: ");
-    data = "";
-    count++;
-    if (board[positionX][positionY] === "x" || board[positionX][positionY] === "o") {
-      alert('next turn');
-      count--;
-    } else {
-      if (count%2===0) {
-        board[positionX][positionY] = "o";
-      } else {
-        board[positionX][positionY] = "x";
-      }
-    }
+  // let b = document.getElementById("caro");
+  // let board = [];
+  // let data = "";
+  // for (let i = 0; i < 5; i++) {
+  //   board[i] = new Array("0", "0", "0", "0", "0");
+  //   data += "<br/>";
+  //   for (let j = 0; j < 5; j++) {
+  //     data += "&ensp;" + board[i][j] + "&ensp;";
+  //   }
+  // }
+  //data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+  // b.innerHTML= data;
+  // let count = 0;
+  // function changeValue() {
+  //   let positionX = prompt("X: ");
+  //   let positionY = prompt("Y: ");
+  //   data = "";
+  //   count++;
+  //   if (board[positionX][positionY] === "x" || board[positionX][positionY] === "o") {
+  //     alert('next turn');
+  //     count--;
+  //   } else {
+  //     if (count%2===0) {
+  //       board[positionX][positionY] = "o";
+  //     } else {
+  //       board[positionX][positionY] = "x";
+  //     }
+  //   }
+  //
+  //   for (let i = 0;i < 5;i++) {
+  //     data += "<br>";
+  //     for (let j = 0;j < 5;j++) {
+  //       data += "&ensp;" + board[i][j] + "&ensp;";
+  //     }
+  //   }
+  //   data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
+  //   b.innerHTML = "<hr>" + data;
+  //   for (let i = 0;i < 5;i++) {
+  //     for (let j = 0;j < 5;j++) {
+  //       if (board[i][j] === "x" && board[i][j+1] === "x" && board[i][j+2] === "x" ||
+  //           board[i][j] === "x" && board[i+1][j] === "x" && board[i+2][j] === "x" ||
+  //           board[i+1][j-1] === "x" && board[i][j] === "x" && board[i-1][j+1] === "x" ||
+  //           board[i][j] === "x" && board[i+1][j+1] === "x" && board[i+2][j+2] === "x") {
+  //         alert('x win');
+  //       }
+  //       if (board[i][j] === "o" && board[i][j+1] === "o" && board[i][j+2] === "o" ||
+  //         board[i][j] === "o" && board[i+1][j] === "o" && board[i+2][j] === "o" ||
+  //         board[i+1][j-1] === "o" && board[i][j] === "o" && board[i-1][j+1] === "o" ||
+  //         board[i][j] === "o" && board[i+1][j+1] === "o" && board[i+2][j+2] === "o") {
+  //         alert('o win');
+  //       }
+  //     }
+  //   }
+  // }
 
-    for (let i = 0;i < 5;i++) {
-      data += "<br>";
-      for (let j = 0;j < 5;j++) {
-        data += "&ensp;" + board[i][j] + "&ensp;";
-      }
-    }
-    data += "<br/><br/><input type='button' value='Change Value' onclick='changeValue()'>";
-    b.innerHTML = "<hr>" + data;
-    for (let i = 0;i < 5;i++) {
-      for (let j = 0;j < 5;j++) {
-        if (board[i][j] === "x" && board[i][j+1] === "x" && board[i][j+2] === "x" ||
-            board[i][j] === "x" && board[i+1][j] === "x" && board[i+2][j] === "x" ||
-            board[i+1][j-1] === "x" && board[i][j] === "x" && board[i-1][j+1] === "x" ||
-            board[i][j] === "x" && board[i+1][j+1] === "x" && board[i+2][j+2] === "x") {
-          alert('x win');
-        }
-        if (board[i][j] === "o" && board[i][j+1] === "o" && board[i][j+2] === "o" ||
-          board[i][j] === "o" && board[i+1][j] === "o" && board[i+2][j] === "o" ||
-          board[i+1][j-1] === "o" && board[i][j] === "o" && board[i-1][j+1] === "o" ||
-          board[i][j] === "o" && board[i+1][j+1] === "o" && board[i+2][j+2] === "o") {
-          alert('o win');
-        }
-      }
-    }
+  // let sum = 0;
+  // for(let i = 0; i < 8; i++){
+  //     if(i % 3 === 0){
+  //         sum += i;
+  //     }
+  // }
+  // console.log(sum);
+  // var numbers = [1, 2];
+  // numbers[3] = 3;
+  // console.log(numbers.length);
+
+  // result = (a + b < 14) ? 'false' : 'pass';
+  // console.log(result);
+
+  var x = 5;
+  if(x++ < 6) {
+      x++;
   }
+  document.write(x);
+    console.log(x);
+
 </script>
 </body>
 </html>

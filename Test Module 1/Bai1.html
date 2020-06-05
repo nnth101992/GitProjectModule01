@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Bai 1</title>
+</head>
+<body>
+<script>
+	function createArray() {
+	      let array = [];
+		array.length = parseInt(prompt("Nhập chiều dài của mảng vào đây:"));
+		for (let i = 0; i < array.length; i++) {
+		      array[i] = parseInt(prompt("Mời nhập phần tử thứ " + (i+1) + " của mảng vào đây:"));
+		}
+		return array;
+      }
+      //createArray();
+	function findMax(arrayT) {
+		let max = 0;
+		for (let i = 0; i < arrayT.length; i++) {
+		      if (max < arrayT[i]) {
+		            max = arrayT[i];
+			}
+		}
+		alert("Điểm số cao nhất trong mảng danh sách là: " +max);
+      }
+      let array = createArray();
+	let result = findMax(array);
+</script>
+</body>
+</html>

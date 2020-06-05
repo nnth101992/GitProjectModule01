@@ -5,80 +5,92 @@
 	<title>Adam & Eva</title>
 </head>
 <body>
-</body>
 <script>
-	let Apple = function () {
-	    this.weight = 10;
-	    this.getWeight = function () {
-	        return this.weight;
-        }
-        this.decrease = function () {
-	        if (this.weight > 0) {
-	            this.weight--;
-	            //console.log("Apple: " + this.weight);
-			}
-        }
-    }
+      let Apple = function () {
+            this.weight = 10;
+            this.getWeight = function () {
+                  return this.weight;
+            }
+            this.decreaseWeight = function () {
+                  if (this.weight > 0) {
+                        this.weight--;
+                  } else {
+                        alert("Còn táo đâu mà ăn!");
+                  }
+            }
+            this.isEmpty = function () {
+                  if (this.weight > 0) {
+                        return false;
+                  } else {
+                        return true;
+                  }
+            }
+      }
 
-    let Human = function (name, gender, weight) {
-		this.name = name;
-		this.gender = gender;
-		this.weight = weight;
+      let Human = function (name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
 
-		this.getName = function () {
-		    return this.name;
-        }
-        this.getGender = function () {
-            return this.gender;
-        }
-        this.getWeight = function () {
-            return this.weight;
-        }
+            this.setName = function () {
+                  this.name = name;
+            }
 
-        this.checkApple = function (apple) {
-		    return apple.weight > 0;
-        }
+            this.setGender = function () {
+                  if (gender == "Male") {
+                        this.gender = true;
+                  } else if (gender == "Female") {
+                        this.gender = false;
+                  }
+            }
+            this.getGender = function (name) {
+                  if (gender) {
+                        return "Male";
+                  } else {
+                        return "Female";
+                  }
+            }
+            this.getWeight = function () {
+                  return this.weight;
+            }
 
-        this.eat = function (apple) {
-			if (this.checkApple()) {
-			    this.weight++;
-			    apple.decrease();
-			} else {
-			    document.write(this.name + " :Het roi!");
-			}
-        }
 
-        this.say = function () {
-			document.write(this.name + ":" + say + "<br>");
-        }
-    }
 
-    let apple = new Apple();
-	console.log(apple.getWeight());
 
-	let adam = new Human("Adam", "male", 70);
-	document.write(adam.getName() + "<br>");
-	document.write(adam.getGender() + "<br>");
-	document.write(adam.getWeight() + "<br>");
+            this.eat = function (apple) {
+                  if (apple.weight > 0) {
+                        this.weight++;
+                        apple.decreaseWeight();
+                  }
+            }
 
-    let eva = new Human("Eva", "female", 50);
-    document.write(eva.getName() + "<br>");
-    document.write(eva.getGender() + "<br>");
-    document.write(eva.getWeight() + "<br>");
+            this.say = function () {
+                  return "Hello, tên tôi là: " + this.name + ". Giới" +
+				" tính của tôi là: " + this.getGender() + ".Cân nặng " +
+				"của tôi là: " + this.getWeight();
+            }
+            this.checkApple = function (apple) {
+                  return !apple.isEmpty();
+            }
+      }
 
-    adam.say("O, tao kia em");
-    eva.say("Cho em 1 mieng");
-    eva.eat(apple);
-    adam.eat(apple);
-    eva.eat(apple);
-    adam.eat(apple);
-    eva.say("Em no roi");
-    adam.eat(apple);
-    adam.eat(apple);
-    adam.eat(apple);
-    adam.eat(apple);
-    adam.eat(apple);
-    adam.eat(apple);
+      let adam = new Human("Adam", true, 70);
+     	console.log(adam.say());
 
+      let eva = new Human("Eva", false, 50);
+      console.log(eva.say());
+
+      let apple = new Apple();
+	while (!apple.isEmpty()) {
+	      if (adam.checkApple(apple)) {
+	            adam.eat(apple);
+	            console.log(adam.getWeight(), apple.getWeight());
+		}
+            if (eva.checkApple(apple)) {
+                  eva.eat(apple);
+                  console.log(eva.getWeight(), apple.getWeight());
+            }
+	}
 </script>
+</body>
 </html>

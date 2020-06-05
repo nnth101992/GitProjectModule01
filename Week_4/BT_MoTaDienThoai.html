@@ -1,38 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>[Bài tập] Xây dựng lớp mô tả điện thoại</title>
+	<meta charset="UTF-8">
+	<title>[Bài tập] Xây dựng lớp mô tả điện thoại</title>
 </head>
 <body>
-</body>
 <script>
-  // function maxMinAvg(arr) {
-  //   let max = arr[0];
-  //   let min = arr[0];
-  //   let avg;
-  //   let sum = 0;
-  //   let arrnew = [];
-  //   for (let i = 0; i < arr.length; i++){
-  //     if (max <= arr[i]){
-  //       max = arr[i];
-  //       sum += arr[i];
-  //     }
-  //   }
-  //   //console.log(sum);
-  //   arrnew.push(max);
-  //   for (let i = 0; i < arr.length; i++){
-  //     if (min >= arr[i]){
-  //       min = arr[i];
-  //       sum += arr[i];
-  //     }
-  //   }
-  //   arrnew.push(min);
-  //   avg = sum/arr.length;
-  //   arrnew.push(avg);
-  //   return arrnew;
-  // }
+      let Mobile = function (name, battery) {
+		this.name = name;
+		this.battery = battery;
+		this.message = [];
+		this.inbox = [];
+		this.sent = [];
+		this.status = true;
+		this.getName = function () {
+			return this.name;
+            }
+            this.checkOn = function () {
+			if (this.status) {
+			      document.write("On <br>");
+			} else {
+			      document.write("Off <br>");
+			}
+            }
+		this.turnOn = function () {
+			this.status = true;
+            }
+            this.turnOff = function () {
+		      this.status = false;
+            }
+            this.checkBattery = function () {
+		      if (this.battery < 15)  {
+		            console.log(this.name + ": Low battery");
+			}
+                  if (this.battery === 0)  {
+                        console.log(this.name + ": Turn off");
+                  }
+                  if (this.battery === 100)  {
+                        console.log(this.name + ": Full battery");
+                  }
+            }
+            this.chargeBattery = function () {
+		      this.battery++;
+            }
+            this.use = function () {
+			if (this.battery > 0) {
+			      this.battery--;
+			      console.log(this.name + " : " + this.battery);
+			}
+            }
+            this.writeMessage = function (message) {
+			if (this.status) {
+			      this.message = message;
+			} else {
+			      console.log("May dang tat roi");
+			}
+			this.use();
+            }
+            this.sendMessage = function (phone) {
+			if (this.status) {
+			      this.sent.push(this.message);
+			      this.inbox.push(this.message);
+			}
+			this.use();
+            }
+            this.readInbox = function () {
+			if (this.status) {
+			      document.write(this.name + " inbox: " + this.inbox + "<br>");
+			} else {
+			      console.log("May lai tat roi");
+			}
+			this.use();
+            }
+            this.isSent = function () {
+			if (this.status) {
+			      document.write(this.name + " sent a message: " + this.sent);
+			} else {
+				console.log("May van tat");
+			}
+			this.use();
+            }
+      }
 
+      let nokia = new Mobile ("Nokia", 100);
+      document.write(nokia.getName() + "<br>");
+      nokia.turnOff();
+      nokia.checkOn();
+      nokia.turnOn();
+      nokia.checkOn();
 
+      let iphone = new Mobile ("Iphone", 13);
+      document.write(iphone.getName() + "<br>");
+      iphone.turnOn();
+      iphone.checkOn();
+
+      nokia.writeMessage("Hi");
+      nokia.sendMessage(iphone);
+      iphone.readInbox();
+      iphone.writeMessage("Hello, I have seen your mess");
+      iphone.sendMessage(nokia);
+      nokia.readInbox();
+      iphone.isSent();
+
+      for (let i = iphone.battery; i <= 100; i++) {
+            iphone.chargeBattery();
+            iphone.checkBattery();
+	}
 </script>
+</body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Bai 3</title>
+</head>
+<body>
+<script>
+      function showFibonacci(x) {
+            let array = [0, 1];
+            for (let i = 2; ; i++) {
+                  array.push(array[i - 2] + array[i - 1]);
+                  if (x < array[array.length - 1]) {
+                        break;
+                  }
+            }
+            return array;
+      }
+
+
+      function isFibonacci(x) {
+            let array = showFibonacci(x);
+            let final;
+            for (let k = 0; k < array.length; k++) {
+                  if (x === array[k]) {
+                        final = "Số vừa nhập thuộc dãy Fibonacci";
+                        break;
+                  } else {
+                        final = "Số vừa nhập không thuộc dãy Fibonacci";
+                  }
+            }
+            alert(final);
+      }
+
+      let a = parseInt(prompt("Nhập vào đây số nguyên dương bất kỳ"));
+
+      let check = isFibonacci(a);
+
+</script>
+</body>
+</html>

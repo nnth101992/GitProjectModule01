@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Fl</title>
+	<style>
+		canvas {
+			border: 1px solid #222222;
+			background-color: #dddddd;
+		}
+		.button1 {
+			background-color: chocolate;
+			font-size: 20px;
+		}
+		.button2 {
+			background-color: #4CAF50;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+<br><br>
+<button class="button1" onmousedown="accelerate(-0.1)" onmouseup="accelerate(0.1)">JUMP</button><br><br>
+<button class="button2" onclick="restartGame()">RESTART</button>
+
+
+<script>
+      let demoGamePiece;
+      let demoObstacles = [];
+	let demoScore;
+	let demoSound;
+      function startGame() {
+            demoGamePiece = new Component(30, 20, "orange", 20, 180);
+            demoGamePiece.gravity = 0;
+            demoSound = new sound("hit.wav");
+            demoScore = new Component("30px", "Lucida Sans Typewriter", "red", 280, 40, "text");
+            demoGameBoard.start();
+      }
+
+      // Chèn âm thanh
+      function sound(src) {
+            this.sound = document.createElement("audio");
+            this.sound.src = src;
+            this.sound.setAttribute("preload", "auto");
+            this.sound.setAttribute("controls", "none");
+            this.sound.style.display = "none";
+            document.body.appendChild(this.sound);
+            this.play = function(){
+                  this.sound.play();
+            }
+            this.stop = function(){
+                  this.sound.pause();
+            }
+      }
+
+
+      // Khung Canvas
+      let demoGameBoard = {
+            canvas: document.createElement("canvas"),
+            start: function () {
+                  this.canvas.width = 800;
+                  this.canvas.height = 500;
+                  this.context = this.canvas.getContext("2d");
+                  document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                  this.frameNo = 0;
+                  this.interval = setInterval(updateGameBoard, 15);
+                  // window.addEventListener('keydown', function (e) {
+                  //       myGameArea.key = e.keyCode;
+                  // })
+                  // window.addEventListener('keyup', function (e) {
+                  //       myGameArea.key = false;
+                  // })
+            },
+
+		// Xóa đối tượng
+            clear: function () {
+                  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            },
+
+		// Hàm dừng cuộc chơi
+            stop: function () {
+                  clearInterval(this.interval);
+                  alert("Game Over, your score is: " + demoGameBoard.frameNo);
+            }
+      }
+
+      function Component(width, height, color, x, y, type) {
+            this.type = type;
+            this.width = width;
+            this.height = height;
+            this.speedX = 0;
+            this.speedY = 0;
+            this.x = x;
+            this.y = y;
+            this.gravity = 0;
+            this.gravitySpeed = 0;
+            this.update = function () {
+                  ctx = demoGameBoard.context;
+                  if (this.type == "text") {
+                        ctx.font = this.width + " " + this.height;
+                        ctx.fillStyle = color;
+                        ctx.fillText(this.text, this.x, this.y);
+                  } else {
+                        ctx.fillStyle = color;
+                        ctx.fillRect(this.x, this.y, this.width, this.height);
+                  }
+            }
+            this.newPos = function () {
+                  this.gravitySpeed += this.gravity;
+                  this.x += this.speedX;
+                  this.y += this.speedY + this.gravitySpeed;
+                  this.hitBottom();
+                  this.hitTop();
+            }
+            this.hitTop = function () {
+			if (this.y < 0) {
+			      this.y = 0;
+			}
+            }
+
+		// Điều kiện khi obj chạm đáy khung hình
+            this.hitBottom = function() {
+                  let equalBottom = demoGameBoard.canvas.height - this.height;
+                  if (this.y > equalBottom) {
+                        this.y = equalBottom;
+                        this.gravitySpeed = 0;
+                  }
+            }
+
+            //Phương thức va chạm
+            this.crashTo = function (otherObs) {
+                  let myLeft = this.x;
+                  let myRight = this.x + (this.width);
+                  let myTop = this.y;
+                  let myBottom = this.y + (this.height);
+                  let obsLeft = otherObs.x;
+                  let obsRight = otherObs.x + (otherObs.width);
+                  let obsTop = otherObs.y;
+                  let obsBottom = otherObs.y + (otherObs.height);
+                  let crash = true
+                  if ((myBottom < obsTop) || (myTop > obsBottom) || (myRight < obsLeft) || (myLeft > obsRight)) {
+                        crash = false;
+                  }
+                  return crash;
+            }
+      }
+
+
+      //
+      function updateGameBoard() {
+            let x, height, gap, minHeight, maxHeight, minGap, maxGap;
+            let i;
+            for (i = 0; i < demoObstacles.length; i++) {
+                  if (demoGamePiece.crashTo(demoObstacles[i])) {
+                        demoSound.play();
+                        demoGameBoard.stop();
+                        return;
+                  }
+            }
+            demoGameBoard.clear();
+            demoGameBoard.frameNo += 1;
+            if (demoGameBoard.frameNo == 1 || everyInterval(140)) {
+                  x = demoGameBoard.canvas.width;
+                  minHeight = 80;
+                  maxHeight = 300;
+                  height = Math.floor(Math.random()*(maxHeight-minHeight+1)+minHeight);
+                  minGap = 100;
+                  maxGap = 150;
+                  gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
+                  demoObstacles.push(new Component(20, height, "blue", x, 0));
+                  demoObstacles.push(new Component(20, x - height - gap, "blue", x, height + gap));
+            }
+            for (i = 0; i < demoObstacles.length; i++) {
+                  if (demoGameBoard.frameNo < 1000) {
+                        demoObstacles[i].x += -1;
+                  } else if (demoGameBoard.frameNo < 1500) {
+                        demoObstacles[i].x += -1.5;
+			} else {
+                        demoObstacles[i].x += -2;
+			}
+                  demoObstacles[i].update();
+            }
+            // demoGamePiece.speedX = 0;
+            // demoGamePiece.speedY = 0;
+		demoScore.text = "YOUR SCORE: " + demoGameBoard.frameNo;
+            demoScore.update();
+            demoGamePiece.newPos();
+            demoGamePiece.update();
+      }
+
+	function everyInterval(m) {
+		if((demoGameBoard.frameNo / m) % 1 == 0) {
+		      return true;
+		}
+		return false;
+      }
+      function accelerate(n) {
+            demoGamePiece.gravity = n;
+      }
+
+      function restartGame() {
+            demoGameBoard.clear();
+            demoObstacles = [];
+            if (demoGameBoard.frameNo == 1 || everyInterval(140)) {
+                  x = demoGameBoard.canvas.width;
+                  minHeight = 80;
+                  maxHeight = 300;
+                  height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
+                  minGap = 100;
+                  maxGap = 150;
+                  gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
+                  demoObstacles.push(new Component(20, height, "blue", x, 0));
+                  demoObstacles.push(new Component(20, x - height - gap, "blue", x, height + gap));
+            }
+            startGame();
+      }
+
+      startGame();
+</script>
+</body>
+</html>
