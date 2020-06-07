@@ -94,7 +94,7 @@
     let newProduct = document.getElementById('txt_add').value;
     if (newProduct != '') {
       product_list.push(newProduct);
-      loadProducts()
+      loadProducts();
       document.getElementById('txt_add').value = null;
     }
   }
@@ -127,3 +127,78 @@
 </script>
 </body>
 </html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--	<meta charset="UTF-8">-->
+<!--	<title>[*Bài tập] Ứng dụng quản lý sản phẩm sử dụng hàm</title>-->
+<!--	<style>-->
+<!--		input {-->
+<!--			width: 500px;-->
+<!--			height: 30px;-->
+<!--		}-->
+
+<!--		button {-->
+<!--			width: 50px;-->
+<!--			height: 30px;-->
+<!--		}-->
+<!--	</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Add New Product</h1>-->
+<!--<input type="text" id="addNew" value="" placeholder="New Product"/>-->
+<!--<button type="button" onclick="addProduct()">Add</button>-->
+<!--<div id="title">-->
+<!--	<h1>Display All Product</h1>-->
+<!--	<h3 id="product">Product Name</h3>-->
+
+<!--</div>-->
+
+<!--<script>-->
+<!--     -->
+
+<!--     let array = [];-->
+
+<!--     function addProduct() {-->
+<!--          let title = document.getElementById('addNew').value;-->
+<!--          if (title == '') {-->
+<!--               alert("Bạn chưa nhập tên");-->
+<!--          } else {-->
+<!--               array.push(title);-->
+<!--               displays();-->
+<!--               document.getElementById('addNew').value = null;-->
+<!--          }-->
+<!--          console.log(title + "  " + array);-->
+<!--     }-->
+
+<!--     function displays() {-->
+<!--          let text = "Product Name";-->
+<!--          for (let i = 0; i < array.length; i++) {-->
+<!--               let html = '<div id="' + 'del' + i + '"><input type="text" id=' +-->
+<!--                    '"' + 'num' + i + '" value="' + array[i] + '" readonly>' +-->
+<!--                    '<button type="button" onclick="edit(' + i + ')" >Edit</button>' +-->
+<!--                    '<button type="button" onclick="deleted(' + i + ')">Delete</button>' +-->
+<!--                    '</div>';-->
+<!--               text += html;-->
+<!--          }-->
+<!--          document.getElementById('product').innerHTML = text;-->
+
+<!--     }-->
+
+<!--     function edit(numEdit) {-->
+<!--          let edits = prompt("Nhập tên sửa đổi: ");-->
+<!--          document.getElementById("num" + numEdit).value = edits;-->
+
+<!--     }-->
+
+<!--     function deleted(numDelete) {-->
+<!--          document.getElementById("del" + numDelete).remove();-->
+<!--          array[numDelete] = array[array.length - 1];-->
+<!--          array.pop();-->
+<!--          displays();-->
+<!--     }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

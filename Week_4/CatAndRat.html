@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>[*Bài tập] Phát triển ứng dụng mô phỏng lại
+		quá trình mèo bắt chuột và ăn chuột</title>
+</head>
+<body>
+<script>
+	let Rat = function (name, weight, speed, status) {
+		this.name = name;
+		this.weight = weight;
+		this.speed = speed;
+		this.status = status;
+		this.say = function (say) {
+		      document.write(this.name + ": " + say + "<br>");
+            }
+            this.getStatus =function () {
+			return this.status;
+            }
+      }
+
+      let Cat = function (name, weight, speed) {
+		this.name = name;
+		this.weight = weight;
+		this.speed = speed;
+            this.say = function (say) {
+                  document.write(this.name + ": " + say + "<br>");
+            }
+            this.eat = function (rat) {
+			if (rat.getStatus() === true) {
+			      this.weight = this.weight + rat.weight;
+			      document.write(this.name + " weight = " + this.weight + "<br>");
+			}
+            }
+            this.pursueRat = function (rat) {
+			if (rat.speed < this.speed) {
+			      this.say("Mày hả bưởi");
+			      if (rat.getStatus() === true) {
+			            this.eat(rat);
+				} else {
+			            this.say("Omg, nó die r");
+				}
+			} else {
+			     this.say("Nó chạy mất r");
+			}
+            }
+      }
+
+      let rat = new Rat("Rat", 7, 40, true);
+	rat.say("Bắt tao hộ cái");
+	let cat = new Cat("Cat", 20, 60);
+	cat.pursueRat(rat);
+
+</script>
+</body>
+</html>

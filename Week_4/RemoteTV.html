@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>[*Bài tập] Phát triển chương trình sử dụng Remote để điều khiển Tivi</title>
+</head>
+<body>
+<script>
+
+	let Remote = function (code) {
+		this.controlTV = code;
+		this.getTVStatus = function () {
+			return this.controlTV.status;
+            }
+            this.turnOn = function () {
+                  this.controlTV.status = true;
+            }
+            this.turnOff = function () {
+                  this.controlTV.status = false;
+            }
+            this.changeVolumeUp = function (x) {
+			if (this.getTVStatus()) {
+			      for (let i = 0; i < x; i++) {
+			            this.controlTV.volume++;
+			      }
+			} else {
+			      document.write("TV is off <br>");
+			}
+			document.write("Volume of TV: " + this.controlTV.volume + "<br>");
+            }
+            this.changeVolumeDown = function (y) {
+                  if (this.getTVStatus()) {
+                        for (let i = 0; i < y; i++) {
+                              this.controlTV.volume--;
+                        }
+                  } else {
+                        document.write("TV is off <br>");
+                  }
+                  document.write("Volume of TV: " + this.controlTV.volume + "<br>");
+            }
+            this.changeChannel = function (channel) {
+			if (this.getTVStatus()) {
+			      this.controlTV.channel = channel;
+			      document.write("Channel of TV: " + this.controlTV.channel + "<br>");
+			} else {
+			      document.write("TV is off <br>");
+			}
+            }
+      }
+
+      let Television = function (channel, volume, status) {
+		this.channel = channel;
+		this.volume = volume;
+		this.status = status;
+      }
+
+      let vtv1 = new Television(1, 18, false);
+	let remote = new Remote(vtv1);
+	remote.getTVStatus();
+	remote.turnOn();
+	remote.changeChannel(7);
+	remote.changeChannel(3);
+	remote.changeVolumeUp(4);
+	remote.changeVolumeDown(2);
+	remote.turnOff();
+	document.write(remote.getTVStatus());
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Bai 3</title>
+</head>
+<body>
+<script>
+
+      function isFibonacci(x) {
+            let checkNum = false;
+            let f1 = 0;
+            let f2 = 1;
+            let fn = f1 + f2;
+            while (fn < x) {
+                  fn = f1 + f2;
+                  f1 = f2;
+                  f2 = fn;
+            }
+            if (fn === x) {
+			checkNum = true;
+            }
+            return checkNum;
+      }
+
+      let a = parseInt(prompt("Nhập vào đây số nguyên dương bất kỳ"));
+      alert("Số " + a + " thuộc dãy Fibonacci: " + isFibonacci(a));
+
+
+</script>
+</body>
+</html>
