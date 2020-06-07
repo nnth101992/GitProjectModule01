@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>[Bài tập] Ứng dụng vui DoYouLoveMe</title>
+	<style>
+		.buttonNo {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+<div>
+	<label><h1>DO YOU LOVE ME?</h1></label>
+</div>
+
+<button id="yes" onclick="loveMe()">YES</button>
+<button class="buttonNo" id="no" onmouseover="clickMe()">NO</button>
+
+<script>
+	function loveMe() {
+		alert("<3");
+     }
+
+     function clickMe() {
+		let randomTop;
+		let randomLeft;
+		randomTop = parseInt(document.getElementById("no").style.top);
+		console.log(randomTop);
+		randomTop = Math.floor(Math.random() * window.innerHeight);
+
+		randomLeft = Math.floor(Math.random() * window.innerWidth);
+		document.getElementById("no").style.top = randomTop + "px";
+          document.getElementById("no").style.left = randomLeft + "px";
+     }
+</script>
+</body>
+</html>

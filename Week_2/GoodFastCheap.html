@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>[*Bài tập] Ứng dụng good-fast-cheap</title>
+	<style>
+		.col40 {
+			width: 40%;
+			float: left;
+		}
+		.col60 {
+			width: 60%;
+			float: left;
+		}
+	</style>
+
+</head>
+<body>
+<form action="#">
+	<fieldset style="width: 25%">
+		<div class="col40">
+			<label>Good: </label>
+		</div>
+		<div class="col60">
+			<input type="checkbox" id="good" value="true" onclick="a()">
+		</div>
+		<div class="col40">
+			<label>Fast: </label>
+		</div>
+		<div class="col60">
+			<input type="checkbox" id="fast" value="true" onclick="b()">
+		</div>
+		<div class="col40">
+			<label>Cheap: </label>
+		</div>
+		<div class="col60">
+			<input type="checkbox" id="cheap" value="true" onclick="c()">
+		</div>
+	</fieldset>
+</form>
+<script>
+	let good = document.getElementById("good");
+	let fast = document.getElementById("fast");
+	let cheap = document.getElementById("cheap");
+
+	function a() {
+	     if (fast.checked === true && cheap.checked === true) {
+	          if (good.checked === true) {
+	               fast.checked = false;
+	          }
+	     }
+
+     }
+     function b() {
+          if (good.checked === true && cheap.checked === true) {
+               if (fast.checked === true) {
+                    cheap.checked = false;
+               }
+          }
+
+     }
+     function c() {
+          if (fast.checked === true && good.checked === true) {
+               if (cheap.checked === true) {
+                    good.checked = false;
+               }
+          }
+
+     }
+</script>
+</body>
+</html>
